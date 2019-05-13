@@ -20,23 +20,23 @@ class HouseSpider:
 
     # 每个区域的url
     urlDir = {
-        "不限": "/house/",
-        "中山": "/house-a0256/",
-        "西港": "/house-a0255/",
-        "沙口子": "/house-a0257/",
-        "甘井子": "/house-a0258/",
-        "高新园区": "/house-a011193/",
-        "开发区": "/house-a0261/",
-        "旅顺口": "/house-a0259/",
-        "瓦房店": "/house-a01121/",
-        "普兰店": "/house-a01122/",
-        "庄河": "/house-a01124/",
+        # "不限": "/house/",
+        # "中山": "/house-a0256/",
+        # "西港": "/house-a0255/",
+        # "沙口子": "/house-a0257/",
+        # "甘井子": "/house-a0258/",
+        # "高新园区": "/house-a011193/",
+        # "开发区": "/house-a0261/",
+        # "旅顺口": "/house-a0259/",
+        # "瓦房店": "/house-a01121/",
+        # "普兰店": "/house-a01122/",
+        # "庄河": "/house-a01124/",
     }
 
     region = "不限"
     page = 100
     # 通过名字获取 url 地址
-    def getRegionUrl(self, name="中山", page=10):
+    def getRegionUrl(self, name="中山", page=100):
         urlList = []
         for index in range(page):
             if index == 0:
@@ -55,50 +55,50 @@ class HouseSpider:
             "price": price,  # 价格
             "address": address,  # 地址
             "traffic": traffic,  # 交通描述
-            "region": region,  # 区、（福田区、南山区）
+            "region": region,  # 区
             "direction": direction,  # 房子朝向（朝南、朝南北）
         }
 
     # 获取数据库 collection
     def getCollection(self, name):
         zfdb = self.zfdb
-        if name == "不限":
-            return zfdb.rent
-        if name == "中山":
-            return zfdb.zhongshan
-        if name == "西港":
-            return zfdb.xigang
-        if name == "沙口子":
-            return zfdb.shakouzi
-        if name == "甘井子":
-            return zfdb.ganjingzi
-        if name == "高新园区":
-            return zfdb.gaoxingyuanqu
-        if name == "开发区":
-            return zfdb.kaifaqu
-        if name == "旅顺口":
-            return zfdb.lvshunkou
-        if name == "瓦房店":
-            return zfdb.wafangdian
-        if name == "普兰店":
-            return zfdb.pulandian
-        if name == "庄河":
-            return zfdb.zhuanghe
+        # if name == "不限":
+        #     return zfdb.rent
+        # if name == "中山":
+        #     return zfdb.zhongshan
+        # if name == "西港":
+        #     return zfdb.xigang
+        # if name == "沙口子":
+        #     return zfdb.shakouzi
+        # if name == "甘井子":
+        #     return zfdb.ganjingzi
+        # if name == "高新园区":
+        #     return zfdb.gaoxingyuanqu
+        # if name == "开发区":
+        #     return zfdb.kaifaqu
+        # if name == "旅顺口":
+        #     return zfdb.lvshunkou
+        # if name == "瓦房店":
+        #     return zfdb.wafangdian
+        # if name == "普兰店":
+        #     return zfdb.pulandian
+        # if name == "庄河":
+        #     return zfdb.zhuanghe
 
     #
     def getAreaList(self):
         return [
-            "不限",
-            "中山",
-            "西港",
-            "沙口子",
-            "甘井子",
-            "高新园区",
-            "开发区",
-            "旅顺口",
-            "瓦房店",
-            "普兰店",
-            "庄河",
+            # "不限",
+            # "中山",
+            # "西港",
+            # "沙口子",
+            # "甘井子",
+            # "高新园区",
+            # "开发区",
+            # "旅顺口",
+            # "瓦房店",
+            # "普兰店",
+            # "庄河",
         ]
 
     def getOnePageData(self, pageUrl, reginon="不限"):
@@ -151,11 +151,16 @@ class HouseSpider:
         for url in self.getRegionUrl(self.region, self.page):
             self.getOnePageData(url, self.region)
             print("*" * 30 + "one page 分割线" + "*" * 30)
-            time.sleep(1)
+            time.sleep(2)
 
+
+# spider = HouseSpider()
+# spider.setPage(100)# 设置爬取页数
+# spider.setRegion("不限")  # 设置爬取区域
+# spider.startSpicder()# 开启爬虫
 
 spider = HouseSpider()
-spider.setPage(50)# 设置爬取页数
-for i in range(0,11):
+spider.setPage(100)# 设置爬取页数
+for i in range(0,12):
     spider.setRegion(spider.getAreaList()[i]) # 设置爬取区域
     spider.startSpicder()# 开启爬虫

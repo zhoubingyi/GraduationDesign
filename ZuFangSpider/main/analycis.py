@@ -282,35 +282,38 @@ class Analycis:
 analycis = Analycis()
 
 # 构建词云
-# analycis.getTitle()
-# analycis.showWorkCloud(analycis.getTitle(), "docker.jpeg", "kh.ttf", out_filename="output.jpeg")
+analycis.getTitle()
+analycis.showWorkCloud(analycis.getTitle(), "docker.jpeg", "kh.ttf", out_filename="output.jpeg")
 
 # # #租房面积统计
 # (attr, value) = analycis.getAcreage()
 # analycis.showPie("租房面积统计", attr, value)
 
-# # 户型统计
+# 户型统计
 # (attr, value) = analycis.getRooms()
 # analycis.showLine("户型统计", attr, value)
 
-# # 获取每月每平方米多少钱
+# 获取每月每平方米多少钱
 # data = analycis.getTotalAvgPrice()
 # print(data)
 # analycis.showTreeMap("大连各区房租单价：平方米/月", data)
 
-# # 获取每日每平方米多少钱
+# 获取每日每平方米多少钱
 # (attr, value) = analycis.getTotalAvgPricePerDay()
 # print(attr, value)
 # analycis.showLine(title="大连各区房租单价：平方米/日", attr=attr, value=value)
 
 
-# # 样本数量统计
-(attr, value) = analycis.getAnalycisNum()
-print(attr, value)
-analycis.showLine(title="统计样本数量", attr=attr, value=value)
+# # # # # 样本数量统计
+# (attr, value) = analycis.getAnalycisNum()
+# print(attr, value)
+# analycis.showLine(title="统计样本数量", attr=attr, value=value)
 
 
-# # 房源分布
+# # # 房源分布
 # (attr, value) = analycis.getAreaWeight()
 # print(attr, value)
 # analycis.showPie("大连房源分布", attr, value)
+
+
+# mongoexport -d zfdb -c rent -o zhufangu.csv
