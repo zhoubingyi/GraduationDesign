@@ -281,13 +281,13 @@ class Analycis:
 
 analycis = Analycis()
 
-# 构建词云
-analycis.getTitle()
-analycis.showWorkCloud(analycis.getTitle(), "docker.jpeg", "kh.ttf", out_filename="output.jpeg")
+# # 构建词云
+# analycis.getTitle()
+# analycis.showWorkCloud(analycis.getTitle(), "docker.jpeg", "kh.ttf", out_filename="output.jpeg")
 
-# # #租房面积统计
-# (attr, value) = analycis.getAcreage()
-# analycis.showPie("租房面积统计", attr, value)
+# #租房面积统计
+(attr, value) = analycis.getAcreage()
+analycis.showPie("租房面积统计", attr, value)
 
 # 户型统计
 # (attr, value) = analycis.getRooms()
