@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>房租分析</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        .buttonLi {
+            margin-bottom: 30px;
+        }
+
+        button {
+            color: white;
+            padding: 15px 25px;
+            display: inline-block;
+            border: 1px solid rgba(0, 0, 0, 0.21);
+            border-radius: 10px;
+            border-bottom-color: rgba(0, 0, 0, 0.34);
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.34) inset, 0 2px 0 -1px rgba(0, 0, 0, 0.13), 0 3px 0 -1px rgba(0, 0, 0, 0.08),
+                0 3px 13px -1px rgba(0, 0, 0, 0.21);
+        }
+
+        #floorSpace {
+            background-color: #fa5a5a;
+        }
+
+        #houseType {
+            background-color: #7fb1bf;
+            ;
+        }
+
+        #numberOfSamples {
+            background-color: #cb99c5;
+        }
+
+        #dailyPerSquare {
+            background-color: #9abf7f;
+        }
+
+        #monthlyPerSquare {
+            background-color: #f0d264;
+        }
+#housingDistribution {
+background-color: #d48265;
+}
+
+        #map {
+            background-color: #a3ccff;
+        }
+
+        #map a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="buttonLi">
+        <button id='floorSpace'>房租面积统计</button>
+        <button id='houseType'>户型统计</button>
+        <button id='numberOfSamples'>统计样本数量</button>
+        <button id='dailyPerSquare'>每日每平方米多少钱</button>
+        <button id='monthlyPerSquare'>每月每平方米多少钱</button>
+        <button id='housingDistribution'>房源分布</button>
+        <button id='map'><a href="map.html">地图</a></button>
+    </div>
+    <iframe id='content' name="footer" marginwidth=0 marginheight=0 width=100% height=600 src="房租面积统计.html"
+        frameborder=0>
+    </iframe>
+    <script>
+        window.onload = function () {
+            var content = document.getElementById('content')
+            var floorSpace = document.getElementById('floorSpace');
+            var houseType = document.getElementById('houseType');
+            var numberOfSamples = document.getElementById('numberOfSamples')
+            var dailyPerSquare = document.getElementById('dailyPerSquare');
+            var monthlyPerSquare = document.getElementById('monthlyPerSquare');
+            var housingDistribution = document.getElementById('housingDistribution');
+
+            console.log(floorSpace);
+            console.log(content);
+            floorSpace.onclick = function () {
+                content.src = '房租面积统计.html'
+            }
+            houseType.onclick = function () {
+                content.src = '户型统计.html'
+            }
+            numberOfSamples.onclick = function () {
+                content.src = '统计样本数量.html'
+            }
+            dailyPerSquare.onclick = function () {
+                content.src = '每日每平方米多少钱.html'
+            }
+            monthlyPerSquare.onclick = function () {
+                content.src = '每月每平方米多少钱.html'
+            }
+            housingDistribution.onclick = function () {
+                content.src = '房源分布.html'
+            }
+
+        }
+    </script>
+</body>
+
+</html>
