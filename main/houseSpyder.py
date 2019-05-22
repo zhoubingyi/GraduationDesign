@@ -13,24 +13,24 @@ from pymongo import MongoClient
 class HouseSpider:
     def __init__(self):
         self.client = MongoClient('mongodb://localhost:27017/')
-        self.zfdb = self.client.zfdb
+        self.zfdldb = self.client.zfdldb
 
     session = requests.Session()
     baseUrl = "http://dl.zu.fang.com"
 
     # 每个区域的url
     urlDir = {
-        # "不限": "/house/",
-        # "中山": "/house-a0256/",
-        # "西港": "/house-a0255/",
-        # "沙口子": "/house-a0257/",
-        # "甘井子": "/house-a0258/",
-        # "高新园区": "/house-a011193/",
-        # "开发区": "/house-a0261/",
-        # "旅顺口": "/house-a0259/",
-        # "瓦房店": "/house-a01121/",
-        # "普兰店": "/house-a01122/",
-        # "庄河": "/house-a01124/",
+        "不限": "/house/",
+        "中山": "/house-a0256/",
+        "西港": "/house-a0255/",
+        "沙口子": "/house-a0257/",
+        "甘井子": "/house-a0258/",
+        "高新园区": "/house-a011193/",
+        "开发区": "/house-a0261/",
+        "旅顺口": "/house-a0259/",
+        "瓦房店": "/house-a01121/",
+        "普兰店": "/house-a01122/",
+        "庄河": "/house-a01124/",
     }
 
     region = "不限"
@@ -61,44 +61,44 @@ class HouseSpider:
 
     # 获取数据库 collection
     def getCollection(self, name):
-        zfdb = self.zfdb
-        # if name == "不限":
-        #     return zfdb.rent
-        # if name == "中山":
-        #     return zfdb.zhongshan
-        # if name == "西港":
-        #     return zfdb.xigang
-        # if name == "沙口子":
-        #     return zfdb.shakouzi
-        # if name == "甘井子":
-        #     return zfdb.ganjingzi
-        # if name == "高新园区":
-        #     return zfdb.gaoxingyuanqu
-        # if name == "开发区":
-        #     return zfdb.kaifaqu
-        # if name == "旅顺口":
-        #     return zfdb.lvshunkou
-        # if name == "瓦房店":
-        #     return zfdb.wafangdian
-        # if name == "普兰店":
-        #     return zfdb.pulandian
-        # if name == "庄河":
-        #     return zfdb.zhuanghe
+        zfdldb = self.zfdldb
+        if name == "不限":
+            return zfdldb.rent
+        if name == "中山":
+            return zfdldb.zhongshan
+        if name == "西港":
+            return zfdldb.xigang
+        if name == "沙口子":
+            return zfdldb.shakouzi
+        if name == "甘井子":
+            return zfdldb.ganjingzi
+        if name == "高新园区":
+            return zfdldb.gaoxingyuanqu
+        if name == "开发区":
+            return zfdldb.kaifaqu
+        if name == "旅顺口":
+            return zfdldb.lvshunkou
+        if name == "瓦房店":
+            return zfdldb.wafangdian
+        if name == "普兰店":
+            return zfdldb.pulandian
+        if name == "庄河":
+            return zfdldb.zhuanghe
 
     #
     def getAreaList(self):
         return [
-            # "不限",
-            # "中山",
-            # "西港",
-            # "沙口子",
-            # "甘井子",
-            # "高新园区",
-            # "开发区",
-            # "旅顺口",
-            # "瓦房店",
-            # "普兰店",
-            # "庄河",
+            "不限",
+            "中山",
+            "西港",
+            "沙口子",
+            "甘井子",
+            "高新园区",
+            "开发区",
+            "旅顺口",
+            "瓦房店",
+            "普兰店",
+            "庄河",
         ]
 
     def getOnePageData(self, pageUrl, reginon="不限"):
