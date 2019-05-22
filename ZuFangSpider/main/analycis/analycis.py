@@ -4,7 +4,6 @@ import jieba.analyse
 import matplotlib.pyplot as plt
 from scipy.misc import imread
 
-baseUrl = "http://sz.zu.fang.com"
 import time
 from pymongo import MongoClient
 
@@ -282,8 +281,8 @@ analycis = Analycis()
 # analycis.showPie("租房面积统计", attr, value)
 
 # # 户型统计
-# (attr, value) = analycis.getRooms()
-# analycis.showLine("户型统计", attr, value)
+(attr, value) = analycis.getRooms()
+analycis.showLine("户型统计", attr, value)
 
 # 获取每月每平方米多少钱
 # data = analycis.getTotalAvgPrice()
@@ -301,6 +300,6 @@ analycis = Analycis()
 # analycis.showLine(title="统计样本数量", attr=attr, value=value)
 
 # # 房源分布
-(attr, value) = analycis.getAreaWeight()
-print(attr, value)
-analycis.showPie("大连房源分布", attr, value)
+# (attr, value) = analycis.getAreaWeight()
+# print(attr, value)
+# analycis.showPie("大连房源分布", attr, value)
