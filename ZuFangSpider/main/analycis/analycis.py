@@ -17,7 +17,7 @@ class Analycis:
     pinyinDir = {
         # "不限": "rent",
         "甘井子": "ganjingzi",
-        "高兴园区": "gaoxingyuanqu",
+        "高新园区": "gaoxingyuanqu",
         "金州": "jinzhou",
         "开发区": "kaifaqu",
         "旅顺口": "lvshunkou",
@@ -31,7 +31,7 @@ class Analycis:
         return [
             # "不限",
             "甘井子",
-            "高兴园区",
+            "高新园区",
             "金州",
             "开发区",
             "旅顺口",
@@ -55,7 +55,7 @@ class Analycis:
                 return zfdb.rent
             if name == "甘井子":
                 return zfdb.ganjingzi
-            if name == "高兴园区":
+            if name == "高新园区":
                 return zfdb.gaoxingyuanqu
             if name == "金州":
                 return zfdb.jinzhou
@@ -281,8 +281,8 @@ analycis = Analycis()
 # analycis.showPie("租房面积统计", attr, value)
 
 # # 户型统计
-(attr, value) = analycis.getRooms()
-analycis.showLine("户型统计", attr, value)
+# (attr, value) = analycis.getRooms()
+# analycis.showLine("户型统计", attr, value)
 
 # 获取每月每平方米多少钱
 # data = analycis.getTotalAvgPrice()
@@ -300,6 +300,6 @@ analycis.showLine("户型统计", attr, value)
 # analycis.showLine(title="统计样本数量", attr=attr, value=value)
 
 # # 房源分布
-# (attr, value) = analycis.getAreaWeight()
-# print(attr, value)
-# analycis.showPie("大连房源分布", attr, value)
+(attr, value) = analycis.getAreaWeight()
+print(attr, value)
+analycis.showPie("大连房源分布", attr, value)
