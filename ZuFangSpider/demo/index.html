@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,9 +44,10 @@
         #monthlyPerSquare {
             background-color: #f0d264;
         }
-#housingDistribution {
-background-color: #d48265;
-}
+
+        #housingDistribution {
+            background-color: #d48265;
+        }
 
         #map {
             background-color: #a3ccff;
@@ -58,9 +60,6 @@ background-color: #d48265;
     </style>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
     <div class="buttonLi">
         <button id='floorSpace'>房租面积统计</button>
         <button id='houseType'>户型统计</button>
@@ -101,7 +100,6 @@ background-color: #d48265;
             housingDistribution.onclick = function () {
                 content.src = '房源分布.html'
             }
-
         }
     </script>
 </body>
