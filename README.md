@@ -11,5 +11,7 @@ demo 文件夹里 index.html 为主页，整合了所有的图表页面
 
 python3.6
 
+使用  pip install -r requriements.txt  安装所有库
+
 
 
