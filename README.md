@@ -3,4 +3,11 @@
 
 爬取的数据在 数据 文件夹中，存储为 csv 文件
 
-index.html 为主页
+demo 文件夹里 index.html 为主页，整合了所有的图表页面
+
+#环境：
+数据库使用 mongoDb
+python3.6
+
+
+
